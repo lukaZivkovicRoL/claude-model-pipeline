@@ -1,0 +1,8 @@
+{
+  "name": "model-pipeline",
+  "version": "0.1.0",
+  "description": "Splits coding work across models: Haiku reads the repo, Fable plans, Haiku writes code against the approved plan.",
+  "author": { "name": "Luka Živković" },
+  "license": "MIT",
+  "keywords": ["agents", "haiku", "fable", "planning", "workflow"]
+}

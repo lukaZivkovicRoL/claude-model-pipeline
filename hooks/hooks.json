@@ -1,0 +1,17 @@
+{
+  "description": "Inject the model-pipeline routing rule at session start.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat \"${CLAUDE_PLUGIN_ROOT}/hooks/routing-rule.md\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
