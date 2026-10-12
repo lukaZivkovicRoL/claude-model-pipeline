@@ -1,6 +1,6 @@
 ---
 name: planner
-description: Implementation planner (Opus or Fable, set by MODEL_PIPELINE_PLANNER; the orchestrator passes the model on spawn). Use after repo-reader has produced context briefs, to turn a task + briefs into a step-by-step plan explicit enough for a smaller model (haiku-coder) to execute without guessing. Plans only, never edits.
+description: Implementation planner (Opus, Sonnet or Fable, set by MODEL_PIPELINE_PLANNER; the orchestrator passes the model on spawn). Use after repo-reader has produced context briefs, to turn a task + briefs into a step-by-step plan explicit enough for a smaller model (haiku-coder) to execute without guessing. Plans only, never edits.
 model: opus
 tools: Read, Grep, Glob
 ---

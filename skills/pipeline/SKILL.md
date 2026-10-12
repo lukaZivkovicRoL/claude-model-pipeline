@@ -1,10 +1,10 @@
 ---
 name: pipeline
-description: Run a coding task through the model pipeline — haiku-griller (Haiku) grills the user on requirements, repo-reader (Haiku) gathers context, planner (Opus or Fable) writes the plan, the user approves it, then haiku-coder (Haiku) implements it. Use when the user invokes /pipeline, or for any non-trivial code change.
+description: Run a coding task through the model pipeline — haiku-griller (Haiku) grills the user on requirements, repo-reader (Haiku) gathers context, planner (Opus, Sonnet or Fable) writes the plan, the user approves it, then haiku-coder (Haiku) implements it. Use when the user invokes /pipeline, or for any non-trivial code change.
 argument-hint: <task description>
 ---
 
-# Model pipeline: grill (Haiku) → read (Haiku) → plan (Opus or Fable) → approve → code (Haiku)
+# Model pipeline: grill (Haiku) → read (Haiku) → plan (Opus, Sonnet or Fable) → approve → code (Haiku)
 
 You are the orchestrator. Do not interview the user on your own, read the codebase deeply, write the plan, or write code yourself. Delegate those to the workers. Your job is to route context between them, talk to the user, and check the result.
 
@@ -25,7 +25,7 @@ Task: $ARGUMENTS (if empty, use the user's latest request).
 
 ## 3. Plan: `planner`
 - Spawn one `planner` with the task, the Requirements brief and all reader briefs verbatim, the project rules, and any user constraints. Tell it that the brief's Decisions made are settled and must not be asked again.
-- Pass the Agent tool's `model` set to the session's planner model from the routing rule (default `opus`), or to the model the user asked for on this task (`opus` or `fable`). Follow-ups go to the same agent via SendMessage, so they keep that model.
+- Pass the Agent tool's `model` set to the session's planner model from the routing rule (default `opus`), or to the model the user asked for on this task (`opus`, `sonnet` or `fable`). If `/model-pipeline:planner` was run in this conversation, the model it reported takes precedence over the routing rule. Follow-ups go to the same agent via SendMessage, so they keep that model.
 - If the planner lists **Decisions needed**, handle them as described in "Unanticipated decisions" below, then send the answers back to `planner` (SendMessage to the same agent) for a final plan.
 
 ## 4. Checkpoint: user approves the plan
