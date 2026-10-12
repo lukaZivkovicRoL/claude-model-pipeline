@@ -18,6 +18,6 @@ Claude Code plugin that splits coding work across models:
 
 **(GitHub marketplace):**
 ```
-/plugin marketplace add <github-user>/claude-model-pipeline
+/plugin marketplace add lukaZivkovicRoL/claude-model-pipeline
 /plugin install model-pipeline@model-pipeline
 ```
