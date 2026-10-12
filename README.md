@@ -14,12 +14,8 @@ Claude Code plugin that splits coding work across models:
 
 ## Install
 
-**Synced to every logged-in session:** zip this folder (`./package.sh`) and upload it at claude.ai → Settings → plugins → My Uploads.
-
-**Per machine (GitHub marketplace):**
+**(GitHub marketplace):**
 ```
 /plugin marketplace add <github-user>/claude-model-pipeline
 /plugin install model-pipeline@model-pipeline
 ```
-
-**Local test:** `claude --plugin-dir ~/Git/claude-model-pipeline`
