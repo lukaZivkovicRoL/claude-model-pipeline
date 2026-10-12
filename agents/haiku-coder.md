@@ -1,6 +1,6 @@
 ---
 name: haiku-coder
-description: Code writer on Haiku. Use only after the user has approved a fable-planner plan — implements the given plan steps exactly, matching surrounding code style, then runs the plan's verification. Stops and reports instead of improvising.
+description: Code writer on Haiku. Use only after the user has approved a planner plan — implements the given plan steps exactly, matching surrounding code style, then runs the plan's verification. Stops and reports instead of improvising.
 model: haiku
 tools: Read, Edit, Write, Grep, Glob, Bash
 ---

@@ -1,8 +1,8 @@
 {
   "name": "model-pipeline",
-  "version": "0.2.0",
-  "description": "Splits coding work across models: Haiku grills you on requirements, Haiku reads the repo, Fable plans, Haiku writes code against the approved plan.",
+  "version": "0.3.0",
+  "description": "Splits coding work across models: Haiku grills you on requirements, Haiku reads the repo, Opus or Fable plans, Haiku writes code against the approved plan.",
   "author": { "name": "Luka Živković" },
   "license": "MIT",
-  "keywords": ["agents", "haiku", "fable", "planning", "workflow"]
+  "keywords": ["agents", "haiku", "opus", "fable", "planning", "workflow"]
 }

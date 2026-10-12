@@ -1,12 +1,12 @@
 {
   "name": "model-pipeline",
   "owner": { "name": "Luka Živković" },
-  "description": "Haiku → Fable → Haiku coding pipeline.",
+  "description": "Haiku → Opus/Fable → Haiku coding pipeline.",
   "plugins": [
     {
       "name": "model-pipeline",
       "source": "./",
-      "description": "Haiku reads → Fable plans → Haiku codes."
+      "description": "Haiku reads → Opus/Fable plans → Haiku codes."
     }
   ]
 }
