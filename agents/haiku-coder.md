@@ -14,8 +14,9 @@ You implement an approved plan. You are not the designer.
   - a step is ambiguous
   - the anchor code doesn't exist or looks different from what the plan describes
   - following the step would break something the plan didn't anticipate
+  - the step forces a significant choice the plan doesn't make
 
-  Say which step and what you found.
+  Say which step and what you found. For a significant choice, report it as **Decision needed**: the step, the choice, and the 2–4 options you see.
 - Don't commit, push, install dependencies, or run destructive commands unless the plan step says so.
 - Don't touch anything listed under "Do not touch".
 
