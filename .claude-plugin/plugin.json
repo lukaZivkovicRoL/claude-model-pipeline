@@ -1,8 +1,8 @@
 {
   "name": "model-pipeline",
-  "version": "0.5.0",
-  "description": "Splits coding work across models: Haiku grills you on requirements, Haiku reads the repo, Opus, Sonnet or Fable plans, Haiku writes code against the approved plan. grill-pr reviews the current branch for holes, wide-impact decisions and cleanup.",
+  "version": "0.6.0",
+  "description": "Splits coding work across models: Haiku grills you on requirements, Haiku reads the repo, an opt-in designer draws the UI on a doop.design canvas for you to approve, Opus, Sonnet or Fable plans, Haiku writes code against the approved plan. grill-pr reviews the current branch for holes, wide-impact decisions and cleanup.",
   "author": { "name": "Luka Živković" },
   "license": "MIT",
-  "keywords": ["agents", "haiku", "opus", "sonnet", "fable", "planning", "workflow", "review"]
+  "keywords": ["agents", "haiku", "opus", "sonnet", "fable", "planning", "workflow", "review", "design", "doop"]
 }

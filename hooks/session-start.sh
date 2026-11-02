@@ -1,7 +1,8 @@
 #!/bin/sh
-# Prints the routing rule with the planner model filled in (opus|sonnet|fable).
-# Precedence: saved choice in $HOME/.claude/model-pipeline/planner (set by /model-pipeline:planner)
+# Prints the routing rule with the planner model (opus|sonnet|fable) and the design step (on|off) filled in.
+# Planner precedence: saved choice in $HOME/.claude/model-pipeline/planner (set by /model-pipeline:planner)
 # > MODEL_PIPELINE_PLANNER env var > opus.
+# Design step: on only if $HOME/.claude/model-pipeline/designer (set by /model-pipeline:designer) contains "on".
 planner=""
 saved_file="$HOME/.claude/model-pipeline/planner"
 if [ -f "$saved_file" ]; then
@@ -18,4 +19,14 @@ if [ -z "$planner" ]; then
     *) echo "model-pipeline: MODEL_PIPELINE_PLANNER='$planner' is not opus, sonnet or fable; using opus."; planner=opus ;;
   esac
 fi
-sed "s/{{PLANNER_MODEL}}/$planner/g" "$(dirname "$0")/routing-rule.md"
+designer=off
+designer_file="$HOME/.claude/model-pipeline/designer"
+if [ -f "$designer_file" ]; then
+  designer_saved=$(tr -d ' \t\r\n' < "$designer_file")
+  case "$designer_saved" in
+    on) designer=on ;;
+    off|"") ;;
+    *) echo "model-pipeline: saved designer setting '$designer_saved' in $designer_file is not on or off; treating it as off." ;;
+  esac
+fi
+sed -e "s/{{PLANNER_MODEL}}/$planner/g" -e "s/{{DESIGNER}}/$designer/g" "$(dirname "$0")/routing-rule.md"
