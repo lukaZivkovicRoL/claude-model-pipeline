@@ -59,4 +59,4 @@ If there are no findings and no cleanup items, stop after the report. Otherwise 
 
 On a fix choice:
 - First ask the user about every selected item that depends on an unconfirmed **Decision with wider impact** or a **Question for the author**, one at a time with AskUserQuestion, recommendation first. Never assume the answer.
-- Then run the `pipeline` skill flow from stage 2 (Read) or stage 3 (Plan) when the reader briefs above already cover the files. Skip the grill stage: the selected findings and the answers are the Requirements brief, with the answers under Decisions made. The planner's Decisions needed, the approval checkpoint, and the check-and-report stage still apply.
+- Then run the `pipeline` skill flow from stage 2 (Read) or stage 4 (Plan) when the reader briefs above already cover the files. Skip the grill stage and the design stage: the selected findings and the answers are the Requirements brief, with the answers under Decisions made. The planner's Decisions needed, the approval checkpoint, and the check-and-report stage still apply.
